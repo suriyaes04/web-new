@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Skills</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS for Circular Progress Bars and Background Image -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('assets/img/hero-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #000000;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .loading-circle {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #f39c12;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 80s linear infinite; /* Adjust the animation duration here */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+        .content-container {
+            position: relative;
+            z-index: 1;
+            padding: 50px 0;
+            background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background for better readability */
+        }
+
+        .progress-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: conic-gradient(#007bff var(--progress), #e9ecef 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: black; /* Set the percentage text color to black */
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .progress-circle::before {
+            content: attr(data-label);
+            position: absolute;
+            top: 110%;
+            width: 100%;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #fff; /* Change skill label color to white for contrast */
+        }
+
+        .container h1, .container p {
+            color: #fff; /* Set the main heading and paragraph text color to white for better readability */
+            margin-top: 20px;
+        }
+
+        .schedule-container {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background for better readability */
+            color: #fff; /* Set the text color to white for better readability */
+        }
+
+        .schedule-container h2, .schedule-container p {
+            margin: 10px 0;
+        }
+
+        .schedule-container .btn {
+            margin-top: 20px;
+            color: #fff;
+            border-color: #007bff;
+            background-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-circle"></div>
+    </div>
+
+    <div class="schedule-container">
+        <h2>WANT TO SCHEDULE A DISCUSSION?</h2>
+        <p>Please reach out to us here.</p>
+        <a href="mailto:example@example.com" class="btn btn-primary">EMAIL US</a>
+    </div>
+    <div class="content-container">
+        <div class="container text-center">
+            <h1>OUR WORKING SKILL</h1>
+            <p>Some of predominant areas and working skills are :</p>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="progress-circle" style="--progress: 95%;" data-label="Web Application">
+                        95%
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="progress-circle" style="--progress: 80%;" data-label="Web Design">
+                        80%
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="progress-circle" style="--progress: 60%;" data-label="Mobile Development">
+                        60%
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="progress-circle" style="--progress: 55%;" data-label="Product Development">
+                        55%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            document.getElementById('loadingOverlay').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
